@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/360.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <!-- 第一屏 -->
+        <div class="section first">
+            <!-- logo -->
+            <div class="logo"></div>
+            <!-- 图片表示的文字 -->
+            <div class="imgs">
+                <img src="images/text_1.png" alt="">
+                <img src="images/text_2.png" alt="">
+                <img src="images/text_3.png" alt="">
+                <img src="images/text_4.png" alt="">
+                <img src="images/text_5.png" alt="">
+                <img src="images/text_6.png" alt="">
+                <img src="images/text_7.png" alt="">
+                <img src="images/text_8.png" alt="">
+            </div>
+            <!-- 文字介绍 -->
+            <div class="info"></div>
+        </div>
+
+        <!-- 第二屏 -->
+        <div class="section second">
+            <!-- 盾牌碎片 -->
+            <div class="shield">
+                <img src="images/shield_1.png" alt="">
+                <img src="images/shield_2.png" alt="">
+                <img src="images/shield_3.png" alt="">
+                <img src="images/shield_4.png" alt="">
+                <img src="images/shield_5.png" alt="">
+                <img src="images/shield_6.png" alt="">
+                <img src="images/shield_7.png" alt="">
+                <img src="images/shield_8.png" alt="">
+                <img src="images/shield_9.png" alt="">
+            </div>
+            <!-- 文字 -->
+            <div class="info"></div>
+        </div>
+
+        <!-- 第三屏 -->
+        <div class="section third">
+            <!-- 左侧文字 -->
+            <div class="info"></div>
+            <!-- 右侧火箭 -->
+            <div class="circle">
+                <div class="rocket"></div>
+            </div>
+        </div>
+
+        <!-- 第四屏 -->
+        <div class="section fourth">
+            <!-- 搜索 -->
+            <div class="search">
+                <div class="searchBar"></div>
+                <div class="searchText"></div>
+                <div class="searchMsg"></div>
+            </div>
+            <!-- 文字 -->
+            <div class="info"></div>
+        </div>
+
+        <!-- 第五屏 -->
+        <div class="section fifth">
+            <!-- 上侧文字 -->
+            <div class="info"></div>
+            <!-- 线条展示 -->
+            <div class="box">
+                <div class="top"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="toolBal"></div>
+                <div class="line-top"></div>
+                <div class="line-bottom"></div>
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                <div class="extra"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        $('#fullpage').fullpage({
+            /*设置每一屏的背景颜色*/
+            sectionsColor: ['#0da5d6', '#2ab561', '#de8910', '#16ba9d', '#0da5d6'],
+            afterLoad(anchorLink, index) {
+                setTimeout(() => {
+                    $('.section').removeClass('current');
+                    $('.section').eq(index - 1).addClass('current');
+                }, 100);
+            }
+        });
+
+    });
+</script>
